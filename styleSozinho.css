@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(212, 212, 212);
+}
+
+canvas {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 95vh;
+    gap: 20px;
+
+
+}
+
+.toolBox {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    height: 500px;
+    width: 140px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toolBox .toolsArea,
+.toolBox .sizeArea,
+.toolBox .buttonOptions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.buttonTool{
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    background: none;
+}
+
+.buttonTool > span {
+    font-size: 1.8rem;
+}
+
+.buttonTool:hover,
+.buttonSize:hover,
+.buttonOptions .optionClear:hover {
+    background-color: #f2f2f2;
+    
+}
+
+.inputColor {
+    width: 45px;
+    height: 45px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 7px;
+}
+
+.inputColor::-webkit-color-swatch {
+    border-radius: 100px;
+}
+
+.buttonSize {
+    width: 100%;
+    background: none;
+    padding: 5px;
+    height: auto;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonSize > span {
+    width: 100%;
+    display: block;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.buttonSize[data-size="5"] > span {
+    height: 5px;
+}
+
+.buttonSize[data-size="10"] > span {
+    height: 10px;
+}
+
+.buttonSize[data-size="20"] > span {
+    height: 20px;
+}
+
+.buttonSize[data-size="25"] > span {
+    height: 25px;
+}
+
+.buttonOptions button{
+    width: 100%;
+    cursor: pointer;
+    padding: 10px;
+    height: 40px;
+    border: none;
+    background: none;
+}
+
+.buttonOptions .optionClear {
+    border: 0.5px solid rgba(0, 0, 0, 0.514);
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.buttonOptions .optionSave {
+    background-color: rgb(87, 132, 255);
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.buttonOptions .optionSave:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.active {
+    color: rgb(87, 132, 255);
+    background-color: #f2f2f2;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: rgb(87, 132, 255);
+}
+
+footer{
+    font-size: 14px;
+    text-align: center;
+}
+
+
+@media (width < 800px) {
+    canvas {
+        width: 360px;
+        height: 600px;
+    }
+
+    .toolBox {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 190px;
+        width: 360px;
+        align-items: start;
+    }
+
+    .container {
+        align-items: center;
+        justify-content: start;
+        width: 100%;
+        min-height: 96vh;
+        gap: 10px;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+
+    .toolBox .toolsArea,
+    .toolBox .sizeArea {
+        gap: 8px;
+    }
+
+    .toolBox .sizeArea > button {
+        margin-bottom: 7px;
+    }
+
+    .buttonOptions {
+        margin-bottom: 20px;
+    }
+}
